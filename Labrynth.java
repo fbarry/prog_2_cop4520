@@ -1,3 +1,8 @@
+// Fiona Barry
+// 3/3/2022
+// COP4520
+// Assignment 2 - Labrynth
+
 import java.util.*;
 
 public class Labrynth {
