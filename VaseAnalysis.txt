@@ -41,3 +41,5 @@ This reflected in the output with a runtime of about 6 seconds and only 13 visit
 Conclusion:
 
 Strategy 3 is the best option.
+
+The use of a synchronized method ensures only one guest can visit the vase at once.
