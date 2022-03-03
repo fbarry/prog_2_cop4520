@@ -1,0 +1,18 @@
+Ran on N = 1,000,000
+
+Output:
+
+Total Number of Labrynth Visits: 28720485 for 1000000 people in 10985 ms.
+
+I had some issues with this problem statement.
+
+1. It doesn't specify whether guests can bring anything into the maze with them or is the cupcakes have wrappers. I assumed they had wrappers.
+2. It doesn't specify whether all guests must report to the minotaur or if only one guest has to. I assume that all guests must report and they don't need to do it all at once.
+
+With these assumptions in mind, I created the following solution:
+
+1. The minotaur randomly chooses a guest to enter the maze (the minotaur knows who he's picking next)
+2. The current visitor enters the maze. If it's their first time, they eat the cupcake and leave the wrapper.
+3. If the current visitor notices N wrappers on the ground, they tell the minotaur that everyone has visited.
+
+The use of a synchronized method ensures only one guest can visit the labrynth at once.

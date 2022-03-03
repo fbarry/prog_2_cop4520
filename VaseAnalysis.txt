@@ -1,0 +1,43 @@
+Ran on N = 1,000,000
+
+Output:
+
+Strategy 1:
+Execution Time: 6966
+Average Visits: 13.965902
+
+
+Strategy 2:
+Execution Time: 7111
+Average Visits: 14.400523
+
+
+Strategy 3:
+Execution Time: 6289
+Average Visits: 12.804134
+
+My issue with this problem statement is that the goal of the guests in choosing the strategy isn't clear. Do they want to all visit at least once? Do they want to do it in the least time possible? Do they want to visit as few times possible until all guests visit? Do they randomly want to see the vase? It's unclear.
+
+I assume that guests randomly want to see the vase. I also assume that the guests want everyone to see it as quickly as possible with the least average visits.
+
+By this assumption, strategy 3 (a queue) is most effective. An analysis of this further is below.
+
+Strategy 1 Analysis:
+
+Guests are meant to randomly check if the room is busy. This poses a couple of issues. First, guests are likely to waste multiple visits on a busy room without knowing until they try. Also, a guest who has already visited could go to visit again and block a large number of guests who have not visited yet. The advantage is that guests don't need to wait at the door to visit.
+
+This reflected in the output which shows about 7 seconds and an average of 14 tries per guest until everyone could visit.
+
+Strategy 2 Analysis:
+
+Guests can see a sign at all times that says "Available" or "Busy". This provides an advantage over strategy 1 because guests won't waste tries when the room is busy. Hypothetically they would visit less on average (even though this run doesn't reflect that). The time spent, however, isn't necessarily better because a guest who has visited already may beat another guest to the door, blocking a large number of people who have not visited yet.
+
+Strategy 3 Analysis:
+
+Guests can line up in a queue if they choose to. This provides an advantage over strategies 1 and 2 because guests who have not visited and are in line will not be skipped by guests who have visited. Also, because guests are waiting in line, they won't need to visit as often.
+
+This reflected in the output with a runtime of about 6 seconds and only 13 visits per guest.
+
+Conclusion:
+
+Strategy 3 is the best option.
